@@ -39,6 +39,6 @@ spec:
 {{- with .Values.podAnnotations }}
 {{ toYaml . | indent 8 }}
 {{- end }}
-    spec: |
+    spec:
       {{- include "grafana.pod" . | nindent 6 }}
 {{- end }}
