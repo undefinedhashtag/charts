@@ -1,0 +1,283 @@
+apiVersion: v1
+entries:
+  crate:
+  - apiVersion: v1
+    created: "2020-03-13T16:05:28.165460969+01:00"
+    description: CrateDB chart
+    digest: f7aabf2acd8e503074464513f09cca291877e81c958f9ca68295472f12afa791
+    icon: https://crate.io/wp-content/themes/webflow/images/logo-crate.png
+    maintainers:
+    - email: d.sarah710@yahoo.com
+      name: undefinedhashtag
+    name: crate
+    sources:
+    - https://github.com/crate/crate
+    - https://github.com/crate/docker-crate
+    urls:
+    - crate-0.1.8.tgz
+    version: 0.1.8
+  datacollector:
+  - apiVersion: v1
+    created: "2020-03-13T16:05:28.167412387+01:00"
+    description: A Helm chart to deploy streamsets data datacollector
+    digest: b64106235ef8e94ef2d9517932d9c519ff429d7a663ba8ef3e1ce9b1a8cc55b5
+    name: datacollector
+    urls:
+    - datacollector-0.1.7.tgz
+    version: 0.1.7
+  docker-registry:
+  - apiVersion: v1
+    appVersion: 2.7.1
+    created: "2020-03-13T16:05:28.168003052+01:00"
+    description: A Helm chart for Docker Registry
+    digest: 80c7b20e02e82e5521a6268c4f930e58cf7f51963c6c6e801e755e85617c0eef
+    home: https://hub.docker.com/_/registry/
+    icon: https://hub.docker.com/public/images/logos/mini-logo.svg
+    maintainers:
+    - email: jpds@protonmail.com
+      name: jpds
+    - email: pete.brown@powerhrg.com
+      name: rendhalver
+    name: docker-registry
+    sources:
+    - https://github.com/docker/distribution-library-image
+    urls:
+    - docker-registry-1.9.2.tgz
+    version: 1.9.2
+  elasticsearch:
+  - apiVersion: v1
+    appVersion: 7.6.1
+    created: "2020-03-13T16:05:28.169444284+01:00"
+    description: Official Elastic helm chart for Elasticsearch
+    digest: b39b33caa730a23b5bdbd6b5f97b613a9e98449f65728a2778aa0d81ccce6656
+    home: https://github.com/undefinedhashtag/charts
+    icon: https://helm.elastic.co/icons/elasticsearch.png
+    maintainers:
+    - email: helm-charts@elastic.co
+      name: Elastic
+    name: elasticsearch
+    sources:
+    - https://github.com/elastic/elasticsearch
+    urls:
+    - elasticsearch-7.6.1.tgz
+    version: 7.6.1
+  grafana:
+  - apiVersion: v1
+    appVersion: 6.6.2
+    created: "2020-03-13T16:05:28.170631508+01:00"
+    description: The leading tool for querying and visualizing time series and metrics.
+    digest: 16876cd65092a8e0c36f0f6c607e7f287b7b08382fbdfd6ccab8185c07abfbb3
+    home: https://grafana.net
+    icon: https://raw.githubusercontent.com/grafana/grafana/master/public/img/logo_transparent_400x.png
+    kubeVersion: ^1.8.0-0
+    maintainers:
+    - email: zanhsieh@gmail.com
+      name: zanhsieh
+    - email: rluckie@cisco.com
+      name: rtluckie
+    - email: maor.friedman@redhat.com
+      name: maorfr
+    name: grafana
+    sources:
+    - https://github.com/grafana/grafana
+    urls:
+    - grafana-5.0.3.tgz
+    version: 5.0.3
+  gravitee:
+  - apiVersion: v1
+    appVersion: 2.10.9
+    created: "2020-03-13T16:05:28.171870451+01:00"
+    description: Official Gravitee.io Helm chart for Access Management
+    digest: 48e9f5627f6586209e3109dcec65e92fc6bc6537c88a487991cb96aa54b8bcf8
+    home: https://gravitee.io
+    icon: https://avatars2.githubusercontent.com/u/12655666?s=200&v=4
+    name: gravitee
+    sources:
+    - https://github.com/gravitee-io
+    urls:
+    - gravitee-1.0.1.tgz
+    version: 1.0.1
+  iot-agent:
+  - apiVersion: v1
+    created: "2020-03-13T16:05:28.172510838+01:00"
+    description: A Helm chart for NodeJS based IoT Agents
+    digest: 1e08b70043646db7f4236d40c6cea653c0857408e981725b01a7ea54ee8f26d0
+    name: iot-agent
+    urls:
+    - iot-agent-0.1.6.tgz
+    version: 0.1.6
+  iot-agent-manager:
+  - apiVersion: v1
+    created: "2020-03-13T16:05:28.172850108+01:00"
+    description: A Helm chart for IoT Agent Manager
+    digest: 6b666e655e3b83acdbcdd2f51592ea8cf71deff300cf6e4e0afa9eb5d169fcca
+    name: iot-agent-manager
+    urls:
+    - iot-agent-manager-0.1.3.tgz
+    version: 0.1.3
+  keycloak:
+  - apiVersion: v1
+    appVersion: 8.0.1
+    created: "2020-03-13T16:05:28.174379571+01:00"
+    description: Open Source Identity and Access Management For Modern Applications
+      and Services
+    digest: d470d9a1e8b2c0732617d011f84e6d8e42c121728e37a0e610845b669cb2672a
+    home: https://www.keycloak.org/
+    icon: https://www.keycloak.org/resources/images/keycloak_logo_480x108.png
+    keywords:
+    - sso
+    - idm
+    - openid connect
+    - saml
+    - kerberos
+    - ldap
+    maintainers:
+    - email: unguiculus@gmail.com
+      name: unguiculus
+    - email: thomas.darimont+github@gmail.com
+      name: thomasdarimont
+    name: keycloak
+    sources:
+    - https://undefinedhashtag.github.io/charts/
+    - https://github.com/jboss-dockerfiles/keycloak
+    urls:
+    - keycloak-7.0.0.tgz
+    version: 7.0.0
+  kube-state-metrics:
+  - apiVersion: v1
+    appVersion: 1.9.5
+    created: "2020-03-13T16:05:28.175293139+01:00"
+    description: Install kube-state-metrics to generate and expose cluster-level metrics
+    digest: 3150f0f5a80f7cc32eaab4329b90eb03012c29402b4addead8d76caed84479f2
+    home: https://github.com/undefinedhashtag/charts/kube-state-metrics/
+    keywords:
+    - metric
+    - monitoring
+    - prometheus
+    - kubernetes
+    maintainers:
+    - email: jose@armesto.net
+      name: fiunchinho
+    - email: tariq.ibrahim@mulesoft.com
+      name: tariq1890
+    - email: manuel@rueg.eu
+      name: mrueg
+    name: kube-state-metrics
+    sources:
+    - https://github.com/undefinedhashtag/charts/kube-state-metrics/
+    urls:
+    - kube-state-metrics-2.8.1.tgz
+    version: 2.8.1
+  metrics-server:
+  - apiVersion: v1
+    appVersion: 0.3.6
+    created: "2020-03-13T16:05:28.175796413+01:00"
+    description: Metrics Server is a cluster-wide aggregator of resource usage data.
+    digest: c26763a633b27e8a12dd508da72339fb60c7eee38fc3ac220bf863b50e6556af
+    home: https://github.com/undefinedhashtag/charts/metrics-server
+    keywords:
+    - metrics-server
+    maintainers:
+    - email: o.with@sportradar.com
+      name: olemarkus
+    - email: k.aasan@sportradar.com
+      name: kennethaasan
+    name: metrics-server
+    sources:
+    - https://github.com/undefinedhashtag/charts/metrics-server
+    urls:
+    - metrics-server-2.10.0.tgz
+    version: 2.10.0
+  nosqlclient:
+  - apiVersion: v1
+    appVersion: 2.2.0
+    created: "2020-03-13T16:05:28.17612709+01:00"
+    description: A Helm chart to deploy nosql client
+    digest: 182262885560667a2a5c97a5e2fd9d49a5a7ad08a54c65f321eed49ced0f9c53
+    name: nosqlclient
+    urls:
+    - nosqlclient-0.1.2.tgz
+    version: 0.1.2
+  oauth2-proxy:
+  - apiVersion: v1
+    appVersion: 4.0.0
+    created: "2020-03-13T16:05:28.176660745+01:00"
+    description: A reverse proxy that provides authentication with Google, Github
+      or other providers
+    digest: 185d370e81915ecd044475cd4d2129d51e66a0d5851ede141391a0ac191102d8
+    home: https://pusher.github.io/oauth2_proxy/
+    keywords:
+    - kubernetes
+    - oauth
+    - oauth2
+    - authentication
+    - google
+    - github
+    kubeVersion: '>=1.9.0-0'
+    maintainers:
+    - email: cedric.dsm@gmail.com
+      name: desaintmartin
+    - email: maxime@root314.com
+      name: miouge1
+    name: oauth2-proxy
+    sources:
+    - https://github.com/pusher/oauth2_proxy
+    urls:
+    - oauth2-proxy-2.2.2.tgz
+    version: 2.2.2
+  orion:
+  - apiVersion: v1
+    created: "2020-03-13T16:05:28.177058614+01:00"
+    description: A Helm chart for Orion Context Broker
+    digest: d357b163d9f131ef21177f3f68eb7b14d9451a2ee6d26f865ec4614688239ae8
+    maintainers:
+    - email: tomas.aliaga@martel-innovate.com
+      name: taliaga
+    name: orion
+    sources:
+    - https://github.com/telefonicaid/fiware-orion
+    urls:
+    - orion-0.1.3.tgz
+    version: 0.1.3
+  postgresql:
+  - apiVersion: v1
+    appVersion: 11.7.0
+    created: "2020-03-13T16:05:28.178505574+01:00"
+    description: Chart for PostgreSQL, an object-relational database management system
+      (ORDBMS) with an emphasis on extensibility and on standards-compliance.
+    digest: fef3c9e79da3ac716fd2807864935c9d28585c1cf90c55bfc301124c82f5d771
+    home: https://www.postgresql.org/
+    icon: https://bitnami.com/assets/stacks/postgresql/img/postgresql-stack-110x117.png
+    keywords:
+    - postgresql
+    - postgres
+    - database
+    - sql
+    - replication
+    - cluster
+    maintainers:
+    - email: containers@bitnami.com
+      name: Bitnami
+    - email: cedric@desaintmartin.fr
+      name: desaintmartin
+    name: postgresql
+    sources:
+    - https://github.com/bitnami/bitnami-docker-postgresql
+    urls:
+    - postgresql-8.4.3.tgz
+    version: 8.4.3
+  quantumleap:
+  - apiVersion: v1
+    created: "2020-03-13T16:05:28.179012889+01:00"
+    description: A Helm chart for QuantumLeap
+    digest: 5d7a8aa193d26298a1cdf38c36aec99bba176d6f8d838e031020e0b6d17bfc9e
+    maintainers:
+    - email: tomas.aliaga@martel-innovate.com
+      name: taliaga
+    name: quantumleap
+    sources:
+    - https://github.com/smartsdk/ngsi-timeseries-api
+    urls:
+    - quantumleap-0.1.10.tgz
+    version: 0.1.10
+generated: "2020-03-13T16:05:28.164837702+01:00"
