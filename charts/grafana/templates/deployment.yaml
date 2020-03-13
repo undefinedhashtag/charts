@@ -40,5 +40,5 @@ spec:
 {{ toYaml . | indent 8 }}
 {{- end }}
     spec:
-      {{- include "grafana.pod" . | nindent 6 }}
+      {{ include "grafana.pod" . | nindent 6 }}
 {{- end }}
