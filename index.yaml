@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   crate:
   - apiVersion: v1
-    created: "2020-04-16T17:54:15.699268096+02:00"
+    created: "2020-04-16T18:06:56.523347863+02:00"
     description: CrateDB chart
     digest: f7aabf2acd8e503074464513f09cca291877e81c958f9ca68295472f12afa791
     icon: https://crate.io/wp-content/themes/webflow/images/logo-crate.png
@@ -14,21 +14,21 @@ entries:
     - https://github.com/crate/crate
     - https://github.com/crate/docker-crate
     urls:
-    - https://undefinedhastag.github.io/charts/crate-0.1.8.tgz
+    - https://undefinedhashtag.github.io/charts/crate-0.1.8.tgz
     version: 0.1.8
   datacollector:
   - apiVersion: v1
-    created: "2020-04-16T17:54:15.700037558+02:00"
+    created: "2020-04-16T18:06:56.523995328+02:00"
     description: A Helm chart to deploy streamsets data datacollector
     digest: b64106235ef8e94ef2d9517932d9c519ff429d7a663ba8ef3e1ce9b1a8cc55b5
     name: datacollector
     urls:
-    - https://undefinedhastag.github.io/charts/datacollector-0.1.7.tgz
+    - https://undefinedhashtag.github.io/charts/datacollector-0.1.7.tgz
     version: 0.1.7
   docker-registry:
   - apiVersion: v1
     appVersion: 2.7.1
-    created: "2020-04-16T17:54:15.700745067+02:00"
+    created: "2020-04-16T18:06:56.525325574+02:00"
     description: A Helm chart for Docker Registry
     digest: 80c7b20e02e82e5521a6268c4f930e58cf7f51963c6c6e801e755e85617c0eef
     home: https://hub.docker.com/_/registry/
@@ -42,12 +42,12 @@ entries:
     sources:
     - https://github.com/docker/distribution-library-image
     urls:
-    - https://undefinedhastag.github.io/charts/docker-registry-1.9.2.tgz
+    - https://undefinedhashtag.github.io/charts/docker-registry-1.9.2.tgz
     version: 1.9.2
   elasticsearch:
   - apiVersion: v1
     appVersion: 7.6.1
-    created: "2020-04-16T17:54:15.703098946+02:00"
+    created: "2020-04-16T18:06:56.526759356+02:00"
     description: Official Elastic helm chart for Elasticsearch
     digest: b39b33caa730a23b5bdbd6b5f97b613a9e98449f65728a2778aa0d81ccce6656
     home: https://github.com/undefinedhashtag/charts
@@ -59,12 +59,12 @@ entries:
     sources:
     - https://github.com/elastic/elasticsearch
     urls:
-    - https://undefinedhastag.github.io/charts/elasticsearch-7.6.1.tgz
+    - https://undefinedhashtag.github.io/charts/elasticsearch-7.6.1.tgz
     version: 7.6.1
   grafana:
   - apiVersion: v1
     appVersion: 6.6.2
-    created: "2020-04-16T17:54:15.704419233+02:00"
+    created: "2020-04-16T18:06:56.528010322+02:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: 1a823604662c925684b43dc43c1be832679c2dbcf360203beb74afcc107cef97
     home: https://grafana.net
@@ -81,12 +81,12 @@ entries:
     sources:
     - https://github.com/grafana/grafana
     urls:
-    - https://undefinedhastag.github.io/charts/grafana-5.0.3.tgz
+    - https://undefinedhashtag.github.io/charts/grafana-5.0.3.tgz
     version: 5.0.3
   gravitee:
   - apiVersion: v1
     appVersion: 2.10.9
-    created: "2020-04-16T17:54:15.705724843+02:00"
+    created: "2020-04-16T18:06:56.52935196+02:00"
     description: Official Gravitee.io Helm chart for Access Management
     digest: 48e9f5627f6586209e3109dcec65e92fc6bc6537c88a487991cb96aa54b8bcf8
     home: https://gravitee.io
@@ -95,30 +95,30 @@ entries:
     sources:
     - https://github.com/gravitee-io
     urls:
-    - https://undefinedhastag.github.io/charts/gravitee-1.0.1.tgz
+    - https://undefinedhashtag.github.io/charts/gravitee-1.0.1.tgz
     version: 1.0.1
   iot-agent:
   - apiVersion: v1
-    created: "2020-04-16T17:54:15.706405589+02:00"
+    created: "2020-04-16T18:06:56.529992569+02:00"
     description: A Helm chart for NodeJS based IoT Agents
     digest: 1e08b70043646db7f4236d40c6cea653c0857408e981725b01a7ea54ee8f26d0
     name: iot-agent
     urls:
-    - https://undefinedhastag.github.io/charts/iot-agent-0.1.6.tgz
+    - https://undefinedhashtag.github.io/charts/iot-agent-0.1.6.tgz
     version: 0.1.6
   iot-agent-manager:
   - apiVersion: v1
-    created: "2020-04-16T17:54:15.706784637+02:00"
+    created: "2020-04-16T18:06:56.530404921+02:00"
     description: A Helm chart for IoT Agent Manager
     digest: 6b666e655e3b83acdbcdd2f51592ea8cf71deff300cf6e4e0afa9eb5d169fcca
     name: iot-agent-manager
     urls:
-    - https://undefinedhastag.github.io/charts/iot-agent-manager-0.1.3.tgz
+    - https://undefinedhashtag.github.io/charts/iot-agent-manager-0.1.3.tgz
     version: 0.1.3
   keycloak:
   - apiVersion: v1
     appVersion: 8.0.1
-    created: "2020-04-16T17:54:15.708022067+02:00"
+    created: "2020-04-16T18:06:56.531649749+02:00"
     description: Open Source Identity and Access Management For Modern Applications
       and Services
     digest: d470d9a1e8b2c0732617d011f84e6d8e42c121728e37a0e610845b669cb2672a
@@ -141,12 +141,12 @@ entries:
     - https://undefinedhashtag.github.io/charts/
     - https://github.com/jboss-dockerfiles/keycloak
     urls:
-    - https://undefinedhastag.github.io/charts/keycloak-7.0.0.tgz
+    - https://undefinedhashtag.github.io/charts/keycloak-7.0.0.tgz
     version: 7.0.0
   kube-state-metrics:
   - apiVersion: v1
     appVersion: 1.9.5
-    created: "2020-04-16T17:54:15.708748289+02:00"
+    created: "2020-04-16T18:06:56.532898192+02:00"
     description: Install kube-state-metrics to generate and expose cluster-level metrics
     digest: e3273006a55e75a137a28590e48f0f65bd728ee9036dd2b52bb6085c660cf788
     home: https://github.com/kubernetes/kube-state-metrics/
@@ -166,12 +166,12 @@ entries:
     sources:
     - https://github.com/kubernetes/kube-state-metrics/
     urls:
-    - https://undefinedhastag.github.io/charts/kube-state-metrics-2.8.2.tgz
+    - https://undefinedhashtag.github.io/charts/kube-state-metrics-2.8.2.tgz
     version: 2.8.2
   metrics-server:
   - apiVersion: v1
     appVersion: 0.3.6
-    created: "2020-04-16T17:54:15.709391846+02:00"
+    created: "2020-04-16T18:06:56.533569236+02:00"
     description: Metrics Server is a cluster-wide aggregator of resource usage data.
     digest: 0203414c9bae7fdcf448c32ec36f52a402bc6f0840fce5501551d615bcd604aa
     home: https://github.com/kubernetes-incubator/metrics-server
@@ -186,12 +186,12 @@ entries:
     sources:
     - https://github.com/kubernetes-incubator/metrics-server
     urls:
-    - https://undefinedhastag.github.io/charts/metrics-server-2.10.1.tgz
+    - https://undefinedhashtag.github.io/charts/metrics-server-2.10.1.tgz
     version: 2.10.1
   nfs-server-provisioner:
   - apiVersion: v1
     appVersion: 2.3.0
-    created: "2020-04-16T17:54:15.710612331+02:00"
+    created: "2020-04-16T18:06:56.534091125+02:00"
     description: nfs-server-provisioner is an out-of-tree dynamic provisioner for
       Kubernetes. You can use it to quickly & easily deploy shared storage that works
       almost anywhere.
@@ -213,22 +213,22 @@ entries:
     sources:
     - https://github.com/undefinedhashtag/charts/kube-state-metrics/
     urls:
-    - https://undefinedhastag.github.io/charts/nfs-server-provisioner-1.0.0.tgz
+    - https://undefinedhashtag.github.io/charts/nfs-server-provisioner-1.0.0.tgz
     version: 1.0.0
   nosqlclient:
   - apiVersion: v1
     appVersion: 2.2.0
-    created: "2020-04-16T17:54:15.711218621+02:00"
+    created: "2020-04-16T18:06:56.53444475+02:00"
     description: A Helm chart to deploy nosql client
     digest: 182262885560667a2a5c97a5e2fd9d49a5a7ad08a54c65f321eed49ced0f9c53
     name: nosqlclient
     urls:
-    - https://undefinedhastag.github.io/charts/nosqlclient-0.1.2.tgz
+    - https://undefinedhashtag.github.io/charts/nosqlclient-0.1.2.tgz
     version: 0.1.2
   oauth2-proxy:
   - apiVersion: v1
     appVersion: 4.0.0
-    created: "2020-04-16T17:54:15.711883799+02:00"
+    created: "2020-04-16T18:06:56.535074169+02:00"
     description: A reverse proxy that provides authentication with Google, Github
       or other providers
     digest: 82167693788a0fd758318c95d1accec20d6324ff71c3f6f21bc22baf40951656
@@ -250,11 +250,11 @@ entries:
     sources:
     - https://github.com/pusher/oauth2_proxy
     urls:
-    - https://undefinedhastag.github.io/charts/oauth2-proxy-2.2.2.tgz
+    - https://undefinedhashtag.github.io/charts/oauth2-proxy-2.2.2.tgz
     version: 2.2.2
   orion:
   - apiVersion: v1
-    created: "2020-04-16T17:54:15.712314149+02:00"
+    created: "2020-04-16T18:06:56.535572797+02:00"
     description: A Helm chart for Orion Context Broker
     digest: d357b163d9f131ef21177f3f68eb7b14d9451a2ee6d26f865ec4614688239ae8
     maintainers:
@@ -264,12 +264,12 @@ entries:
     sources:
     - https://github.com/telefonicaid/fiware-orion
     urls:
-    - https://undefinedhastag.github.io/charts/orion-0.1.3.tgz
+    - https://undefinedhashtag.github.io/charts/orion-0.1.3.tgz
     version: 0.1.3
   postgresql:
   - apiVersion: v1
     appVersion: 11.7.0
-    created: "2020-04-16T17:54:15.713844314+02:00"
+    created: "2020-04-16T18:06:56.537122075+02:00"
     description: Chart for PostgreSQL, an object-relational database management system
       (ORDBMS) with an emphasis on extensibility and on standards-compliance.
     digest: fef3c9e79da3ac716fd2807864935c9d28585c1cf90c55bfc301124c82f5d771
@@ -291,11 +291,11 @@ entries:
     sources:
     - https://github.com/bitnami/bitnami-docker-postgresql
     urls:
-    - https://undefinedhastag.github.io/charts/postgresql-8.4.3.tgz
+    - https://undefinedhashtag.github.io/charts/postgresql-8.4.3.tgz
     version: 8.4.3
   quantumleap:
   - apiVersion: v1
-    created: "2020-04-16T17:54:15.714397563+02:00"
+    created: "2020-04-16T18:06:56.537673247+02:00"
     description: A Helm chart for QuantumLeap
     digest: 5d7a8aa193d26298a1cdf38c36aec99bba176d6f8d838e031020e0b6d17bfc9e
     maintainers:
@@ -305,6 +305,6 @@ entries:
     sources:
     - https://github.com/smartsdk/ngsi-timeseries-api
     urls:
-    - https://undefinedhastag.github.io/charts/quantumleap-0.1.10.tgz
+    - https://undefinedhashtag.github.io/charts/quantumleap-0.1.10.tgz
     version: 0.1.10
-generated: "2020-04-16T17:54:15.698592216+02:00"
+generated: "2020-04-16T18:06:56.522707928+02:00"
