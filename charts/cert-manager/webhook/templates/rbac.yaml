@@ -2,7 +2,7 @@
 ---
 # apiserver gets the auth-delegator role to delegate auth decisions to
 # the core apiserver
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: {{ include "webhook.fullname" . }}:auth-delegator
@@ -26,7 +26,7 @@ subjects:
 # apiserver gets the ability to read authentication. This allows it to
 # read the specific configmap that has the requestheader-* entries to
 # api agg
-apiVersion: rbac.authorization.k8s.io/v1beta1
+apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
   name: {{ include "webhook.fullname" . }}:webhook-authentication-reader
