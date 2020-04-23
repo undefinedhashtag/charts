@@ -3,7 +3,7 @@ entries:
   cert-manager:
   - apiVersion: v1
     appVersion: v0.14.2
-    created: "2020-04-23T14:46:31.585154235+02:00"
+    created: "2020-04-23T16:42:43.291138468+02:00"
     description: A Helm chart for cert-manager
     digest: 21f5a1ac5c6db54c638465ceaba961e0c9781d3a4ae41d6ac559d16b972bd624
     home: https://github.com/jetstack/cert-manager
@@ -24,7 +24,7 @@ entries:
     version: v0.14.2
   - apiVersion: v1
     appVersion: v0.6.2
-    created: "2020-04-23T14:46:31.585833418+02:00"
+    created: "2020-04-23T16:42:43.291757549+02:00"
     deprecated: true
     description: A Helm chart for cert-manager
     digest: 413f9a7077a951fde59ce20a0b633f1aa9e85e72198ee5f15cdf5f132ef6296f
@@ -42,7 +42,7 @@ entries:
     version: v0.6.7
   crate:
   - apiVersion: v1
-    created: "2020-04-23T14:46:31.586997778+02:00"
+    created: "2020-04-23T16:42:43.29224374+02:00"
     description: CrateDB chart
     digest: f7aabf2acd8e503074464513f09cca291877e81c958f9ca68295472f12afa791
     icon: https://crate.io/wp-content/themes/webflow/images/logo-crate.png
@@ -58,7 +58,7 @@ entries:
     version: 0.1.8
   datacollector:
   - apiVersion: v1
-    created: "2020-04-23T14:46:31.587630466+02:00"
+    created: "2020-04-23T16:42:43.292973949+02:00"
     description: A Helm chart to deploy streamsets data datacollector
     digest: b64106235ef8e94ef2d9517932d9c519ff429d7a663ba8ef3e1ce9b1a8cc55b5
     name: datacollector
@@ -68,7 +68,7 @@ entries:
   docker-registry:
   - apiVersion: v1
     appVersion: 2.7.1
-    created: "2020-04-23T14:46:31.588190049+02:00"
+    created: "2020-04-23T16:42:43.293546964+02:00"
     description: A Helm chart for Docker Registry
     digest: 80c7b20e02e82e5521a6268c4f930e58cf7f51963c6c6e801e755e85617c0eef
     home: https://hub.docker.com/_/registry/
@@ -87,7 +87,7 @@ entries:
   elasticsearch:
   - apiVersion: v1
     appVersion: 7.6.1
-    created: "2020-04-23T14:46:31.589587246+02:00"
+    created: "2020-04-23T16:42:43.295219761+02:00"
     description: Official Elastic helm chart for Elasticsearch
     digest: b39b33caa730a23b5bdbd6b5f97b613a9e98449f65728a2778aa0d81ccce6656
     home: https://github.com/undefinedhashtag/charts
@@ -104,7 +104,7 @@ entries:
   grafana:
   - apiVersion: v1
     appVersion: 6.6.2
-    created: "2020-04-23T14:46:31.590834573+02:00"
+    created: "2020-04-23T16:42:43.296576299+02:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: 1a823604662c925684b43dc43c1be832679c2dbcf360203beb74afcc107cef97
     home: https://grafana.net
@@ -126,7 +126,7 @@ entries:
   gravitee:
   - apiVersion: v1
     appVersion: 2.10.9
-    created: "2020-04-23T14:46:31.592082997+02:00"
+    created: "2020-04-23T16:42:43.298572415+02:00"
     description: Official Gravitee.io Helm chart for Access Management
     digest: 48e9f5627f6586209e3109dcec65e92fc6bc6537c88a487991cb96aa54b8bcf8
     home: https://gravitee.io
@@ -139,7 +139,7 @@ entries:
     version: 1.0.1
   iot-agent:
   - apiVersion: v1
-    created: "2020-04-23T14:46:31.592716139+02:00"
+    created: "2020-04-23T16:42:43.299300341+02:00"
     description: A Helm chart for NodeJS based IoT Agents
     digest: 1e08b70043646db7f4236d40c6cea653c0857408e981725b01a7ea54ee8f26d0
     name: iot-agent
@@ -148,7 +148,7 @@ entries:
     version: 0.1.6
   iot-agent-manager:
   - apiVersion: v1
-    created: "2020-04-23T14:46:31.593102466+02:00"
+    created: "2020-04-23T16:42:43.299695743+02:00"
     description: A Helm chart for IoT Agent Manager
     digest: 6b666e655e3b83acdbcdd2f51592ea8cf71deff300cf6e4e0afa9eb5d169fcca
     name: iot-agent-manager
@@ -158,7 +158,7 @@ entries:
   keycloak:
   - apiVersion: v1
     appVersion: 8.0.1
-    created: "2020-04-23T14:46:31.595038805+02:00"
+    created: "2020-04-23T16:42:43.300911523+02:00"
     description: Open Source Identity and Access Management For Modern Applications
       and Services
     digest: d470d9a1e8b2c0732617d011f84e6d8e42c121728e37a0e610845b669cb2672a
@@ -186,7 +186,7 @@ entries:
   kube-state-metrics:
   - apiVersion: v1
     appVersion: 1.9.5
-    created: "2020-04-23T14:46:31.595730174+02:00"
+    created: "2020-04-23T16:42:43.301550788+02:00"
     description: Install kube-state-metrics to generate and expose cluster-level metrics
     digest: e3273006a55e75a137a28590e48f0f65bd728ee9036dd2b52bb6085c660cf788
     home: https://github.com/kubernetes/kube-state-metrics/
@@ -211,7 +211,7 @@ entries:
   metrics-server:
   - apiVersion: v1
     appVersion: 0.3.6
-    created: "2020-04-23T14:46:31.596969769+02:00"
+    created: "2020-04-23T16:42:43.302687953+02:00"
     description: Metrics Server is a cluster-wide aggregator of resource usage data.
     digest: efb3f3e8d2a7690fa6ba039c55da18b75b96d039e7401a0660287f9e9c0c74be
     home: https://github.com/kubernetes-incubator/metrics-server
@@ -230,7 +230,7 @@ entries:
     version: 2.11.0
   - apiVersion: v1
     appVersion: 0.3.6
-    created: "2020-04-23T14:46:31.596405662+02:00"
+    created: "2020-04-23T16:42:43.302114343+02:00"
     description: Metrics Server is a cluster-wide aggregator of resource usage data.
     digest: 0203414c9bae7fdcf448c32ec36f52a402bc6f0840fce5501551d615bcd604aa
     home: https://github.com/kubernetes-incubator/metrics-server
@@ -250,7 +250,7 @@ entries:
   nfs-server-provisioner:
   - apiVersion: v1
     appVersion: 2.2.1-k8s1.12
-    created: "2020-04-23T14:46:31.597419023+02:00"
+    created: "2020-04-23T16:42:43.30319839+02:00"
     description: nfs-server-provisioner is an out-of-tree dynamic provisioner for
       Kubernetes. You can use it to quickly & easily deploy shared storage that works
       almost anywhere.
@@ -272,27 +272,31 @@ entries:
     version: 0.3.1
   nginx-ingress:
   - apiVersion: v1
-    appVersion: 1.6.3
-    created: "2020-04-23T14:46:31.598747518+02:00"
-    description: NGINX Ingress Controller
-    digest: 0a98670eacdd09a19e4a5ba6bd7b92e551a7c7de5b705914213da40aed4181fc
-    icon: https://raw.githubusercontent.com/nginxinc/kubernetes-ingress/v1.6.3/deployments/helm-chart/chart-icon.png
+    appVersion: 0.30.0
+    created: "2020-04-23T16:42:43.305586732+02:00"
+    description: An nginx Ingress controller that uses ConfigMap to store the nginx
+      configuration.
+    digest: 1c563aa59351b9c2a054aa3b02d00a38f074b3ceba58ae3223cad1e3a803b754
+    home: https://github.com/kubernetes/ingress-nginx
+    icon: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Nginx_logo.svg/500px-Nginx_logo.svg.png
     keywords:
     - ingress
     - nginx
+    kubeVersion: '>=1.10.0-0'
     maintainers:
-    - email: kubernetes@nginx.com
-      name: NGINX Kubernetes Team
+    - name: ChiefAlexander
+    - email: Trevor.G.Wood@gmail.com
+      name: taharah
     name: nginx-ingress
     sources:
-    - https://github.com/nginxinc/kubernetes-ingress/tree/v1.6.3/deployments/helm-chart
+    - https://github.com/kubernetes/ingress-nginx
     urls:
-    - https://undefinedhashtag.github.io/charts/nginx-ingress-0.4.3.tgz
-    version: 0.4.3
+    - https://undefinedhashtag.github.io/charts/nginx-ingress-1.36.3.tgz
+    version: 1.36.3
   nosqlclient:
   - apiVersion: v1
     appVersion: 2.2.0
-    created: "2020-04-23T14:46:31.599183882+02:00"
+    created: "2020-04-23T16:42:43.306203117+02:00"
     description: A Helm chart to deploy nosql client
     digest: 182262885560667a2a5c97a5e2fd9d49a5a7ad08a54c65f321eed49ced0f9c53
     name: nosqlclient
@@ -302,7 +306,7 @@ entries:
   oauth2-proxy:
   - apiVersion: v1
     appVersion: 4.0.0
-    created: "2020-04-23T14:46:31.599941409+02:00"
+    created: "2020-04-23T16:42:43.306803954+02:00"
     description: A reverse proxy that provides authentication with Google, Github
       or other providers
     digest: 82167693788a0fd758318c95d1accec20d6324ff71c3f6f21bc22baf40951656
@@ -328,7 +332,7 @@ entries:
     version: 2.2.2
   orion:
   - apiVersion: v1
-    created: "2020-04-23T14:46:31.600371453+02:00"
+    created: "2020-04-23T16:42:43.307191113+02:00"
     description: A Helm chart for Orion Context Broker
     digest: d357b163d9f131ef21177f3f68eb7b14d9451a2ee6d26f865ec4614688239ae8
     maintainers:
@@ -343,7 +347,7 @@ entries:
   pgadmin4:
   - apiVersion: v1
     appVersion: 4.19.0
-    created: "2020-04-23T14:46:31.600970669+02:00"
+    created: "2020-04-23T16:42:43.3077685+02:00"
     description: pgAdmin4 is a web based administration tool for PostgreSQL database
     digest: a60061d4a947bbd409a62abcc9b7218ba33670f60b4768d802ca8b5840ba2c34
     home: https://www.pgadmin.org/
@@ -357,7 +361,7 @@ entries:
   postgresql:
   - apiVersion: v1
     appVersion: 11.7.0
-    created: "2020-04-23T14:46:31.60316053+02:00"
+    created: "2020-04-23T16:42:43.309295028+02:00"
     description: Chart for PostgreSQL, an object-relational database management system
       (ORDBMS) with an emphasis on extensibility and on standards-compliance.
     digest: fef3c9e79da3ac716fd2807864935c9d28585c1cf90c55bfc301124c82f5d771
@@ -383,7 +387,7 @@ entries:
     version: 8.4.3
   quantumleap:
   - apiVersion: v1
-    created: "2020-04-23T14:46:31.603714952+02:00"
+    created: "2020-04-23T16:42:43.309810531+02:00"
     description: A Helm chart for QuantumLeap
     digest: 5d7a8aa193d26298a1cdf38c36aec99bba176d6f8d838e031020e0b6d17bfc9e
     maintainers:
@@ -395,4 +399,4 @@ entries:
     urls:
     - https://undefinedhashtag.github.io/charts/quantumleap-0.1.10.tgz
     version: 0.1.10
-generated: "2020-04-23T14:46:31.582199535+02:00"
+generated: "2020-04-23T16:42:43.28816028+02:00"
