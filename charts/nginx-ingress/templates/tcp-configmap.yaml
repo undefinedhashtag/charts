@@ -1,11 +1,14 @@
-{{- if or .Values.serviceAccount.create -}}
+{{- if .Values.tcp }}
 apiVersion: v1
-kind: ServiceAccount
+kind: ConfigMap
 metadata:
   labels:
     app: {{ template "nginx-ingress.name" . }}
     chart: {{ template "nginx-ingress.chart" . }}
+    component: "{{ .Values.controller.name }}"
     heritage: {{ .Release.Service }}
     release: {{ template "nginx-ingress.releaseLabel" . }}
-  name: {{ template "nginx-ingress.serviceAccountName" . }}
-{{- end -}}
+  name: {{ template "nginx-ingress.fullname" . }}-tcp
+data:
+{{ tpl (toYaml .Values.tcp) . | indent 2 }}
+{{- end }}

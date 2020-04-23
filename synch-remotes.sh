@@ -15,11 +15,11 @@ unzip release-0.14.zip
 rm release-0.14.zip
 cp -R cert-manager-release-0.14/deploy/charts/cert-manager ../charts
 
-wget https://github.com/nginxinc/kubernetes-ingress/archive/v1.6.3.zip
-unzip v1.6.3.zip
-rm v1.6.3.zip
-cp kubernetes-ingress-1.6.3/LICENSE ../charts/kubernetes-ingress
-cp -R kubernetes-ingress-1.6.3/deployments/helm-chart/* ../charts/nginx-ingress/
+wget https://github.com/helm/charts/archive/cfcf87ac254dcbb2d4aa1c866e20dd7e8e55b8e5.zip
+unzip cfcf87ac254dcbb2d4aa1c866e20dd7e8e55b8e5.zip
+rm cfcf87ac254dcbb2d4aa1c866e20dd7e8e55b8e5.zip
+cp charts-cfcf87ac254dcbb2d4aa1c866e20dd7e8e55b8e5/LICENSE ../charts/nginx-ingress/
+cp -R charts-cfcf87ac254dcbb2d4aa1c866e20dd7e8e55b8e5/stable/nginx-ingress ../charts/
 
 cd ..
 rm -rf tmp
