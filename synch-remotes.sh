@@ -12,7 +12,14 @@ cp -R helm-charts/charts/pgadmin4 ../charts
 
 wget https://github.com/jetstack/cert-manager/archive/release-0.14.zip
 unzip release-0.14.zip
+rm release-0.14.zip
 cp -R cert-manager-release-0.14/deploy/charts/cert-manager ../charts
+
+wget https://github.com/nginxinc/kubernetes-ingress/archive/v1.6.3.zip
+unzip v1.6.3.zip
+rm v1.6.3.zip
+cp kubernetes-ingress-1.6.3/LICENSE ../charts/kubernetes-ingress
+cp -R kubernetes-ingress-1.6.3/deployments/helm-chart/* ../charts/nginx-ingress/
 
 cd ..
 rm -rf tmp
