@@ -205,6 +205,7 @@ keycloak:
 
   ## Add additional volumes and mounts, e. g. for custom themes
   extraVolumes: |
+
   extraVolumeMounts: |
 
   ## Add additional ports, eg. for custom admin console
