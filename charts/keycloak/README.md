@@ -48,7 +48,7 @@ Parameter | Description | Default
 `clusterDomain` | The internal Kubernetes cluster domain | `cluster.local`
 `keycloak.replicas` | The number of Keycloak replicas | `1`
 `keycloak.image.repository` | The Keycloak image repository | `jboss/keycloak`
-`keycloak.image.tag` | The Keycloak image tag | `8.0.1`
+`keycloak.image.tag` | The Keycloak image tag | `9.0.2`
 `keycloak.image.pullPolicy` | The Keycloak image pull policy | `IfNotPresent`
 `keycloak.image.pullSecrets` | Image pull secrets | `[]`
 `keycloak.basepath` | Path keycloak is hosted at | `auth`
@@ -58,9 +58,10 @@ Parameter | Description | Default
 `keycloak.existingSecretKey` |  The key in `keycloak.existingSecret` that stores the admin password | `password`
 `keycloak.jgroups.discoveryProtocol` | The protocol for JGroups discovery | `dns.DNS_PING`
 `keycloak.jgroups.discoveryProperties` | Properties for JGroups discovery. Passed through the `tpl` function | `"dns_query={{ template "keycloak.fullname" . }}-headless.{{ .Release.Namespace }}.svc.{{ .Values.clusterDomain }}"`
+`keycloak.javaToolOptions` | Java tool options | `"-XX:+UseContainerSupport -XX:MaxRAMPercentage=50.0"`
 `keycloak.extraInitContainers` | Additional init containers, e. g. for providing themes, etc. Passed through the `tpl` function and thus to be configured a string | `""`
 `keycloak.extraContainers` | Additional sidecar containers, e. g. for a database proxy, such as Google's cloudsql-proxy. Passed through the `tpl` function and thus to be configured a string | `""`
-`keycloak.extraEnv` | Allows the specification of additional environment variables for Keycloak. You probably want to set `PROXY_ADDRESS_FORWARDING="true"` if your instance is running behind a reverse proxy. Passed through the `tpl` function and thus to be configured a string. | `""`
+`keycloak.extraEnv` | Allows the specification of additional environment variables for Keycloak. Passed through the `tpl` function and thus to be configured a string. | `""`
 `keycloak.extraVolumeMounts` | Add additional volumes mounts, e. g. for custom themes. Passed through the `tpl` function and thus to be configured a string | `""`
 `keycloak.extraVolumes` | Add additional volumes, e. g. for custom themes. Passed through the `tpl` function and thus to be configured a string | `""`
 `keycloak.extraPorts` | Add additional ports, e. g. for custom admin console port. Passed through the `tpl` function and thus to be configured a string | `""`
@@ -72,14 +73,19 @@ Parameter | Description | Default
 `keycloak.tolerations` | Node taints to tolerate | `[]`
 `keycloak.podLabels` | Extra labels to add to pod | `{}`
 `keycloak.podAnnotations` | Extra annotations to add to pod. Values are passed through the `tpl` function | `{}`
+`keycloak.statefulsetAnnotations` | Extra annotations to add to statefulset. Values are passed through the `tpl` function | `{}`
 `keycloak.hostAliases` | Mapping between IP and hostnames that will be injected as entries in the pod's hosts files | `[]`
 `keycloak.enableServiceLinks` | Indicates whether information about services should be injected into pod's environment variables, matching the syntax of Docker links | `false`
+`keycloak.proxyAddressForwarding` | Enables proxy address forwarding if your instance is running behind a reverse proxy | `true`
+`keycloak.podManagementPolicy` | Pod management policy. One of `Parallel` or `OrderedReady` | `Parallel`
 `keycloak.restartPolicy` | Pod restart policy. One of `Always`, `OnFailure`, or `Never` | `Always`
 `keycloak.serviceAccount.create` | If `true`, a new service account is created | `false`
+`keycloak.serviceAccount.name` | Name of service account to use. If `serviceAccount.create=true`, a new service account is created with this name. | `"default" OR (if serviceAccount.create=true) keycloak.fullname`
 `keycloak.securityContext` | Security context for the entire pod. Every container running in the pod will inherit this security context. This might be relevant when other components of the environment inject additional containers into running pods (service meshs are the most prominent example for this) | `{fsGroup: 1000}`
 `keycloak.containerSecurityContext` | Security context for containers running in the pod. Will not be inherited by additionally injected containers | `{runAsUser: 1000, runAsNonRoot: true}`
 `keycloak.startupScripts` | Custom startup scripts to run before Keycloak starts up | `[]`
 `keycloak.lifecycleHooks` | Container lifecycle hooks. Passed through the `tpl` function and thus to be configured a string | ``
+`keycloak.terminationGracePeriodSeconds` | Termination grace period in seconds for Keycloak shutdown. Clusters with a large cache might need to extend this to give Infinispan more time to rebalance | `60`
 `keycloak.extraArgs` | Additional arguments to the start command | ``
 `keycloak.livenessProbe` | Liveness probe configuration. Passed through the `tpl` function and thus to be configured as string | See `values.yaml`
 `keycloak.readinessProbe` | Readiness probe configuration. Passed through the `tpl` function and thus to be configured as string | See `values.yaml`
@@ -88,13 +94,14 @@ Parameter | Description | Default
 `keycloak.cli.logging` | WildFly CLI script for logging configuration | See `values.yaml`
 `keycloak.cli.ha` | Settings for HA setups | See `values.yaml`
 `keycloak.cli.custom` | Additional custom WildFly CLI script | `""`
-`keycloak.service.annotations` | Annotations for the Keycloak service | `{}`
+`keycloak.service.annotations` | Annotations for the Keycloak service. Values are passed through the `tpl` function | `{}`
 `keycloak.service.labels` | Additional labels for the Keycloak service | `{}`
 `keycloak.service.type` | The service type | `ClusterIP`
 `keycloak.service.httpPort` | The http service port | `80`
 `keycloak.service.httpsPort` | The https service port | `8443`
 `keycloak.service.httpNodePort` | The http node port used if the service is of type `NodePort` | `""`
 `keycloak.service.httpsNodePort` | The https node port used if the service is of type `NodePort` | `""`
+`keycloak.service.extraPorts` | Add additional ports, e. g. for custom admin console port. Passed through the `tpl` function and thus to be configured a string | `""`
 `keycloak.ingress.enabled` | if `true`, an ingress is created | `false`
 `keycloak.ingress.annotations` | annotations for the ingress | `{}`
 `keycloak.ingress.labels` | Additional labels for the Keycloak ingress | `{}`
@@ -122,6 +129,7 @@ Parameter | Description | Default
 `postgresql.postgresqlUser` | The PostgreSQL user (if `keycloak.persistence.deployPostgres=true`) | `keycloak`
 `postgresql.postgresqlPassword` | The PostgreSQL password (if `keycloak.persistence.deployPostgres=true`) | `""`
 `postgresql.postgresqlDatabase` | The PostgreSQL database (if `keycloak.persistence.deployPostgres=true`) | `keycloak`
+`postgresql.persistence.enabled` | If `true`, a PersistentVolumeClaim is created for PostgreSQL (if `keycloak.persistence.deployPostgres=true`) | `false`
 `test.enabled` | If `true`, test pods get scheduled | `true`
 `test.image.repository` | Test image repository | `unguiculus/docker-python3-phantomjs-selenium`
 `test.image.tag` | Test image tag | `v1`
@@ -129,6 +137,7 @@ Parameter | Description | Default
 `test.securityContext` | Security context for the test pod. Every container running in the pod will inherit this security context. This might be relevant when other components of the environment inject additional containers into the running pod (service meshs are the most prominent example for this) | `{fsGroup: 1000}`
 `test.containerSecurityContext` | Security context for containers running in the test pod. Will not be inherited by additionally injected containers | `{runAsUser: 1000, runAsNonRoot: true}`
 `prometheus.operator.enabled` | Enable the Prometheus Operator features of the chart | `false`
+`prometheus.operator.serviceMonitor.namespace` | Namespace in which to deploy Prometheus Operator ServiceMonitor | `{{ .Release.Namespace }}`
 `prometheus.operator.serviceMonitor.selector` | Labels to add to the Prometheus Operator ServiceMonitor depending on your Operator configuration | `release: prometheus`
 `prometheus.operator.serviceMonitor.interval` | How often Prometheus should poll the metrics endpoint | `10s`
 `prometheus.operator.serviceMonitor.scrapeTimeout` | How long the Prometheus metrics endpoint timeout should be | `10s`
@@ -453,19 +462,18 @@ This allows for greater customizability of the readiness and liveness probes.
 The defaults are unchanged, but since 6.0.0 configured as follows:
 
 ```yaml
-livenessProbe: |
-  httpGet:
-    path: {{ if ne .Values.keycloak.basepath "" }}/{{ .Values.keycloak.basepath }}{{ end }}/
-    port: http
-  initialDelaySeconds: 120
-  timeoutSeconds: 5
-
-readinessProbe: |
-  httpGet:
-    path: {{ if ne .Values.keycloak.basepath "" }}/{{ .Values.keycloak.basepath }}{{ end }}/realms/master
-    port: http
-  initialDelaySeconds: 30
-  timeoutSeconds: 1
+  livenessProbe: |
+    httpGet:
+      path: {{ if ne .Values.keycloak.basepath "" }}/{{ .Values.keycloak.basepath }}{{ end }}/
+      port: http
+    initialDelaySeconds: 300
+    timeoutSeconds: 5
+  readinessProbe: |
+    httpGet:
+      path: {{ if ne .Values.keycloak.basepath "" }}/{{ .Values.keycloak.basepath }}{{ end }}/realms/master
+      port: http
+    initialDelaySeconds: 30
+    timeoutSeconds: 1
 ```
 
 #### Changes in Existing Secret Configuration

@@ -24,7 +24,7 @@ keycloak:
         command: ["/bin/sh", "-c", "echo 'Hello from lifecycle hook!'"]
 
   persistence:
-    deployPostgres: false
+    deployPostgres: true
     dbVendor: postgres
 
 postgresql:

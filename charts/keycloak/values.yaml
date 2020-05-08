@@ -24,7 +24,7 @@ keycloak:
 
   image:
     repository: jboss/keycloak
-    tag: 8.0.1
+    tag: 9.0.2
     pullPolicy: IfNotPresent
 
     ## Optionally specify an array of imagePullSecrets.
@@ -39,7 +39,11 @@ keycloak:
   #    hostnames:
   #      - "my.host.com"
 
+  proxyAddressForwarding: true
+
   enableServiceLinks: false
+
+  podManagementPolicy: Parallel
 
   restartPolicy: Always
 
@@ -72,6 +76,9 @@ keycloak:
     #   exec:
     #     command: ["/bin/sh", "-c", "ls"]
 
+  ## Override the default for the Keycloak container, e.g. for clusters with large cache that requires rebalancing.
+  terminationGracePeriodSeconds: 60
+
   ## Additional arguments to start command e.g. -Dkeycloak.import= to load a realm
   extraArgs: ""
 
@@ -94,10 +101,12 @@ keycloak:
     discoveryProperties: >
       "dns_query={{ template "keycloak.fullname" . }}-headless.{{ .Release.Namespace }}.svc.{{ .Values.clusterDomain }}"
 
+  javaToolOptions: >-
+    -XX:+UseContainerSupport
+    -XX:MaxRAMPercentage=50.0
+
   ## Allows the specification of additional environment variables for Keycloak
   extraEnv: |
-    - name: PROXY_ADDRESS_FORWARDING
-      value: "true"
     # - name: KEYCLOAK_LOGLEVEL
     #   value: DEBUG
     # - name: WILDFLY_LOGLEVEL
@@ -205,6 +214,9 @@ keycloak:
     # maxUnavailable: 1
     # minAvailable: 1
 
+  ## Extra annotations to be added to statefulset
+  statefulsetAnnotations: {}
+
   service:
     annotations: {}
     # service.beta.kubernetes.io/aws-load-balancer-internal: "0.0.0.0/0"
@@ -227,6 +239,9 @@ keycloak:
 
     # Optional: jGroups port for high availability clustering
     jgroupsPort: 7600
+
+    ## Add additional ports, eg. for custom admin console
+    extraPorts: |
 
   ## Ingress configuration.
   ## ref: https://kubernetes.io/docs/user-guide/ingress/
@@ -343,6 +358,9 @@ prometheus:
     enabled: false
 
     serviceMonitor:
+      ## Optionally set a target namespace in which to deploy serviceMonitor
+      namespace: ""
+
       ## Additional labels to add to the ServiceMonitor so it is picked up by the operator.
       ## If using the [Helm Chart](https://github.com/helm/charts/tree/master/stable/prometheus-operator) this is the name of the Helm release.
       selector:

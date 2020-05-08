@@ -21,5 +21,11 @@ rm cfcf87ac254dcbb2d4aa1c866e20dd7e8e55b8e5.zip
 cp charts-cfcf87ac254dcbb2d4aa1c866e20dd7e8e55b8e5/LICENSE ../charts/nginx-ingress/
 cp -R charts-cfcf87ac254dcbb2d4aa1c866e20dd7e8e55b8e5/stable/nginx-ingress ../charts/
 
+wget https://github.com/codecentric/helm-charts/archive/9b69a283a30b50e0673c7d92706cdd9c24f845fc.zip
+unzip 9b69a283a30b50e0673c7d92706cdd9c24f845fc.zip
+rm 9b69a283a30b50e0673c7d92706cdd9c24f845fc.zip
+cp helm-charts-9b69a283a30b50e0673c7d92706cdd9c24f845fc/LICENSE ../charts/keycloak/
+cp -R helm-charts-9b69a283a30b50e0673c7d92706cdd9c24f845fc/charts/keycloak ../charts/
+
 cd ..
 rm -rf tmp
