@@ -20,8 +20,6 @@ spec:
         app: {{ template "pgadmin.name" . }}
         release: {{ .Release.Name }}
     spec:
-      securityContext:
-        fsGroup: {{ .Values.securityContext.fsGroup }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}"
