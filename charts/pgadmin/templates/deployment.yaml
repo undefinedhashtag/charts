@@ -1,0 +1,111 @@
+---
+apiVersion: {{ template "pgadmin.deployment.apiVersion" . }}
+kind: Deployment
+metadata:
+  name: {{ template "pgadmin.fullname" . }}
+  labels:
+    app: {{ template "pgadmin.name" . }}
+    chart: {{ template "pgadmin.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ template "pgadmin.name" . }}
+      release: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        app: {{ template "pgadmin.name" . }}
+        release: {{ .Release.Name }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+          - name: PGADMIN_DEFAULT_EMAIL
+            value: {{ .Values.pgadmin.username }}
+          - name: PGADMIN_DEFAULT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: {{ template "pgadmin.passwordSecret" . }}
+                key: pgadmin-password
+         {{- if .Values.pgadmin.tls }}
+          - name: PGADMIN_ENABLE_TLS
+            value: {{ .Values.pgadmin.tls | quote }}
+         {{- end }}
+          - name: PGADMIN_PORT
+            value: {{ .Values.service.port | quote }}
+         {{- if .Values.pgadmin.scriptname }}
+          - name: SCRIPT_NAME
+            value: {{ .Values.pgadmin.scriptname }}
+         {{- end }}
+         {{- range .Values.pgadmin.config }}
+          - name: {{ .name | upper }}
+            value: {{ .value | quote }}
+         {{- end }}
+          ports:
+          - name: http
+            containerPort: 80
+            protocol: TCP
+          - name: https
+            containerPort: 443
+            protocol: TCP
+          volumeMounts:
+          - name: pgadmin-data
+            mountPath: /var/lib/pgadmin
+         {{- if .Values.pgadmin.tls }}
+          - name: tls-cert
+            mountPath: /certs/server.cert
+            subPath: server.cert
+          - name: tls-private-key
+            mountPath: /certs/server.key
+            subPath: server.key
+         {{- end }}
+         {{- if .Values.servers.enabled }}
+          - name: servers-config
+            mountPath: /pgadmin4/servers.json
+            subPath: servers.json
+         {{- end}}
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+          livenessProbe:
+{{ toYaml .Values.livenessProbe | indent 12 }}
+          readinessProbe:
+{{ toYaml .Values.readinessProbe | indent 12 }}
+      volumes:
+        - name: pgadmin-data
+         {{- if .Values.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistence.existingClaim | default (include "pgadmin.fullname" .) }}
+         {{- else }}
+          emptyDir: {}
+         {{- end }}
+         {{- if .Values.pgadmin.tls }}
+        - name: tls-private-key
+          secret:
+            secretName: {{ template "pgadmin.fullname" . }}-tls
+            items:
+              - key: server.key
+                path: server.key
+        - name: tls-cert
+          secret:
+            secretName: {{ template "pgadmin.fullname" . }}-tls
+            items:
+              - key: server.cert
+                path: server.cert
+         {{- end }}
+         {{- if .Values.servers.enabled }}
+        - name: servers-config
+          configMap:
+            name: {{ template "pgadmin.fullname" . }}
+            items:
+            - key: servers.json
+              path: servers.json
+         {{- end }}
+    {{- if .Values.nodeSelector }}
+      nodeSelector:
+{{ toYaml .Values.nodeSelector | indent 8 }}
+    {{- end }}
