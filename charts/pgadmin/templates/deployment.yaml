@@ -21,7 +21,7 @@ spec:
         release: {{ .Release.Name }}
     spec:
       securityContext:
-        fsGroup: {{ template "pgadmin.spec.values.securityContext.fsGroup" . }}
+        fsGroup: 5050
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}"
