@@ -515,4 +515,13 @@ entries:
     urls:
     - quantumleap-0.1.10.tgz
     version: 0.1.10
-generated: "2020-06-04T17:17:11.058135321+02:00"
+  redisoperator:
+  - apiVersion: v1
+    created: "2020-07-14T00:02:00.076622837+02:00"
+    description: A Helm chart for the Spotahome Redis Operator
+    digest: 8fc6a3574408b16b2c435104165b52a217374db9d0d025c7caae1a30414c2286
+    name: redisoperator
+    urls:
+    - redisoperator-3.1.0.tgz
+    version: 3.1.0
+generated: "2020-07-14T00:02:00.046066303+02:00"
