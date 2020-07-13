@@ -408,6 +408,53 @@ entries:
     urls:
     - https://undefinedhashtag.github.io/charts/pgadmin4-1.2.10.tgz
     version: 1.2.10
+  postgres-operator:
+  - apiVersion: v1
+    appVersion: 1.5.0
+    created: "2020-07-13T17:27:16.513167074+02:00"
+    description: Postgres Operator creates and manages PostgreSQL clusters running
+      in Kubernetes
+    digest: 856d5c8e2a36fa52da2cf31c3717ea8381e226ba8b106ed9193acd0ee53f52ad
+    home: https://github.com/zalando/postgres-operator
+    keywords:
+    - postgres
+    - operator
+    - cloud-native
+    - patroni
+    - spilo
+    maintainers:
+    - email: opensource@zalando.de
+      name: Zalando
+    name: postgres-operator
+    sources:
+    - https://github.com/zalando/postgres-operator
+    urls:
+    - https://undefinedhashtag.github.io/charts/postgres-operator-1.5.0.tgz
+    version: 1.5.0
+  postgres-operator-ui:
+  - apiVersion: v1
+    appVersion: 1.5.0
+    created: "2020-07-13T17:27:16.515084738+02:00"
+    description: Postgres Operator UI provides a graphical interface for a convenient
+      database-as-a-service user experience
+    digest: 33d08ec9c886473f67d654f2ba3b537c8f52306e08093d7a344a468178f4eb4a
+    home: https://github.com/zalando/postgres-operator
+    keywords:
+    - postgres
+    - operator
+    - ui
+    - cloud-native
+    - patroni
+    - spilo
+    maintainers:
+    - email: opensource@zalando.de
+      name: Zalando
+    name: postgres-operator-ui
+    sources:
+    - https://github.com/zalando/postgres-operator
+    urls:
+    - https://undefinedhashtag.github.io/charts/postgres-operator-ui-1.5.0.tgz
+    version: 1.5.0
   postgresql:
   - apiVersion: v1
     appVersion: 11.7.0
