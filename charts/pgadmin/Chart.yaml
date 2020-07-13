@@ -1,0 +1,15 @@
+name: pgadmin
+version: 0.1.12
+appVersion: 4.13.0
+description: pgAdmin is a web based administration tool for the PostgreSQL database.
+keywords:
+  - pgadmin
+  - postgres
+  - database
+  - sql
+home: https://www.pgadmin.org/
+icon: https://wiki.postgresql.org/images/3/30/PostgreSQL_logo.3colors.120x120.png
+source:
+  - https://github.com/cetic/helm-chart
+maintainers:
+  - name: alexnuttinck

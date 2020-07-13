@@ -1,0 +1,127 @@
+---
+## Set default image, imageTag, and imagePullPolicy. mode is used to indicate the
+##
+image:
+  repository: dpage/pgadmin4
+  tag: 4.13
+  pullPolicy: IfNotPresent
+ 
+pgadmin:
+  ## pgadmin admin user
+  username: pgadmin4@pgadmin.org
+  ## pgadmin admin password
+  # existingPasswordSecret: ""
+  password: admin
+  tls: false
+  ## See https://www.pgadmin.org/docs/pgadmin4/latest/container_deployment.html
+  # scriptname: /pgadmin
+
+  ## pgadmin config, Any custom environment variabls. Settings in config.py can be overriden with an environment variable using the prefix: PGADMIN_CONFIG_
+  ## eg turn off enhanced cookie protection for default AKS, loadbalancer installation
+  #config:
+  #  - name: "PGADMIN_CONFIG_ENHANCED_COOKIE_PROTECTION"
+  #    value: "False"
+  
+## Enable persistence using Persistent Volume Claims
+## ref: http://kubernetes.io/docs/user-guide/persistent-volumes/
+##
+persistence:
+  enabled: true
+
+  ## A manually managed Persistent Volume and Claim
+  ## Requires persistence.enabled: true
+  ## If defined, PVC must be created manually before volume will be bound
+  # existingClaim:
+
+  ## pgAdmin data Persistent Volume Storage Class
+  ## If defined, storageClassName: <storageClass>
+  ## If set to "-", storageClassName: "", which disables dynamic provisioning
+  ## If undefined (the default) or set to null, no storageClassName spec is
+  ##   set, choosing the default provisioner.  (gp2 on AWS, standard on
+  ##   GKE, AWS & OpenStack)
+  ##
+  ## Storage class of PV to bind. By default it looks for standard storage class.
+  ## If the PV uses a different storage class, specify that here.
+  # storageClass: standard
+  # VolumeName: ""
+  accessMode: ReadWriteOnce
+  size: 4Gi
+
+## Expose the pgAdmin service to be accessed from outside the cluster (LoadBalancer service).
+## or access it from within the cluster (ClusterIP service). Set the service type and the port to serve it.
+## ref: http://kubernetes.io/docs/user-guide/services/
+##
+service:
+  name: pgadmin
+  type: LoadBalancer
+  port: 80
+  tlsport: 443
+  annotations: {}
+
+  ## Set the LoadBalancer service type to internal only.
+  ## ref: https://kubernetes.io/docs/concepts/services-networking/service/#internal-load-balancer
+  ##
+  # loadBalancerIP:
+
+  ## Load Balancer sources
+  ## https://kubernetes.io/docs/tasks/access-application-cluster/configure-cloud-provider-firewall/#restrict-access-for-loadbalancer-service
+  ##
+  # loadBalancerSourceRanges:
+  # - 10.10.10.0/24
+
+## Configure Ingress based on the documentation here: https://kubernetes.io/docs/concepts/services-networking/ingress/
+##
+ingress:
+  enabled: false
+  annotations: {}
+  path: /
+  hosts: []
+  tls: []
+
+## Configure servers.json: https://www.pgadmin.org/docs/pgadmin4/latest/import_export_servers.html
+##
+servers:
+  enabled: false
+  config:
+    Servers:
+      1:
+        Name: "Test"
+        Group: "Server Group 1"
+        Port: 5432
+        Username: "postgres"
+        Host: "postgres"
+        SSLMode: "prefer"
+        MaintenanceDB: "postgres"
+
+## Configure liveness and readiness probes
+## ref: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/
+##
+#readinessProbe:
+#  httpGet:
+#    path: /
+#    port: http
+#  initialDelaySeconds: 60
+#  periodSeconds: 15
+#  timeoutSeconds: 10
+#livenessProbe:
+#   httpGet:
+#     path: /
+#     port: http
+#   initialDelaySeconds: 60
+#   periodSeconds: 30
+#   timeoutSeconds: 10
+
+## Configure resource requests and limits
+## ref: http://kubernetes.io/docs/user-guide/compute-resources/
+##
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #  cpu: 100m
+  #  memory: 128Mi
+  # requests:
+  #  cpu: 100m
+  #  memory: 128Mi
