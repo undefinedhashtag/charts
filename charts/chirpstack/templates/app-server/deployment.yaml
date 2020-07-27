@@ -50,7 +50,7 @@ spec:
         - name: REDIS__PASSWORD
           valueFrom:
             secretKeyRef:
-              name: {{ .Values.appserver.redis.existingSecret }} 
+              name: {{ default "secret.not.set" .Values.appserver.redis.existingSecret }} 
               key: password
               optional: true          
         - name: APPLICATION_SERVER__API__PUBLIC_HOST

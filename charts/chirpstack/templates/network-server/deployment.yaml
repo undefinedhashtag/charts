@@ -47,7 +47,7 @@ spec:
         - name: REDIS__PASSWORD
           valueFrom:
             secretKeyRef:
-              name: {{ .Values.networkserver.redis.existingSecret }} 
+              name: {{ default "secret.not.set" .Values.networkserver.redis.existingSecret }} 
               key: password   
               optional: true        
         - name: JOIN_SERVER__DEFAULT__SERVER
