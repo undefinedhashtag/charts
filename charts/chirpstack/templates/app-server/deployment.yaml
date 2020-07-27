@@ -62,6 +62,8 @@ spec:
             secretKeyRef:
               name: {{ .Values.appserver.api.external.existingSecret }} 
               key: signSecret
+        - name: MONITORING__BIND
+          value: "0.0.0.0:8090"
         - name: MONITORING__HEALTHCHECK_ENDPOINT
           value: "true"
 {{ include "chirpstack.appserver.integration" . | indent 8 }}
@@ -73,22 +75,25 @@ spec:
           protocol: TCP
         - containerPort: 8003
           protocol: TCP
+        - containerPort: 8090
+          protocol: TCP
+          name: monitoring
         livenessProbe:
           httpGet:
             path: /health
-            port: api-port
+            port: monitoring
           failureThreshold: 5
           periodSeconds: 60
         startupProbe:
           httpGet:
             path: /health
-            port: api-port
+            port: monitoring
           failureThreshold: 30
           periodSeconds: 10
         readinessProbe:
           httpGet:
             path: /health
-            port: api-port
+            port: monitoring
           failureThreshold: 3
           periodSeconds: 20
         resources: {}
