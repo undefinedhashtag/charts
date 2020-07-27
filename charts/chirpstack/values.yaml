@@ -16,8 +16,9 @@ appserver:
     sslmode: require
   redis:
     existingSecret: ""
-    servers:
-      - redis-chirpstack-redis
+    url: "redis://redis-chirpstack-redis:6379"
+    # servers:
+    #   - redis-chirpstack-redis
   integration:
     mqtt:
       server: "tcp://mqtt-mosquitto:1883"
@@ -53,8 +54,9 @@ networkserver:
     sslmode: require
   redis:
     existingSecret: ""
-    servers:
-      - redis-chirpstack-redis
+    url: "redis://redis-chirpstack-redis:6379"
+    # servers:
+      # - redis-chirpstack-redis
   gateway:
     backend:
       type: mqtt # only mqtt supported right now
