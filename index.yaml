@@ -63,6 +63,17 @@ entries:
     urls:
     - cert-manager-v0.6.7.tgz
     version: v0.6.7
+  chirpstack:
+  - apiVersion: v1
+    appVersion: 3.x
+    created: "2020-07-27T12:27:43.395610284+02:00"
+    description: Community Helm Chart for chirpstack.io network stack.
+    digest: 8c0bdf94ea5280cd901e3fbbe914a6cc6e15f19732875007c82a3f8245dbe070
+    icon: https://www.chirpstack.io/img/logo.png
+    name: chirpstack
+    urls:
+    - chirpstack-0.1.0.tgz
+    version: 0.1.0
   crate:
   - apiVersion: v1
     created: "2020-06-04T17:17:11.067979843+02:00"
