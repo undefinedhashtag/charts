@@ -1,0 +1,33 @@
+{{- if .Values.gatewaybridge.enabled -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ template "chirpstack.gatewaybridge.fullname" . }}
+  labels:
+{{ include "chirpstack.gatewaybridge.labels" . | indent 4 }}
+spec:
+  replicas: {{ .Values.gatewaybridge.replicas }}
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+{{ include "chirpstack.gatewaybridge.labels" . | indent 6 }}
+  template:
+    metadata:
+      labels:
+{{ include "chirpstack.gatewaybridge.labels" . | indent 8 }}
+    spec:
+      containers:
+      - image: {{ printf "%s:%s" .Values.gatewaybridge.image.repository .Values.gatewaybridge.image.tag }}
+        name: {{ template "chirpstack.gatewaybridge.fullname" . }}
+        ports:
+        - containerPort: 1700
+          protocol: UDP
+        resources: {}
+        volumeMounts: []
+      restartPolicy: Always
+      volumes: []
+{{- end -}}

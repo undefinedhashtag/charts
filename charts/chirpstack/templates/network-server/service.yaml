@@ -1,0 +1,17 @@
+{{- if .Values.networkserver.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "chirpstack.networkserver.fullname" . }}-api
+  labels:
+{{ include "chirpstack.networkserver.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.networkserver.service.type | quote }}
+  ports:
+  - name: "8000"
+    port: 8000
+    protocol: TCP
+    targetPort: 8000
+  selector:
+{{ include "chirpstack.networkserver.labels" . | indent 4 }}
+{{- end -}}

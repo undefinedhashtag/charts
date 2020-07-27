@@ -1,0 +1,49 @@
+{{- if .Values.appserver.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "chirpstack.appserver.fullname" . }}-external
+  labels:
+{{ include "chirpstack.appserver.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.appserver.service.type | quote}}
+  ports:
+  - name: "8080"
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+{{ include "chirpstack.appserver.labels" . | indent 4 }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "chirpstack.appserver.fullname" . }}-join
+  labels:
+{{ include "chirpstack.appserver.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.appserver.service.type | quote}}
+  ports:
+  - name: "8003"
+    port: 8003
+    protocol: TCP
+    targetPort: 8003
+  selector:
+{{ include "chirpstack.appserver.labels" . | indent 4 }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "chirpstack.appserver.fullname" . }}-api
+  labels:
+{{ include "chirpstack.appserver.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.appserver.service.type | quote}}
+  ports:
+  - name: "8001"
+    port: 8001
+    protocol: TCP
+    targetPort: 8001
+  selector:
+{{ include "chirpstack.appserver.labels" . | indent 4 }}
+{{- end -}}

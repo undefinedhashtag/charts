@@ -1,0 +1,77 @@
+appserver:
+  enabled: true
+  name: as
+  replicaCount: 1
+  image:
+    repository: chirpstack/chirpstack-application-server
+    tag: 3.10.0
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+  postgres:
+    existingSecret: "" # secret must contain keys username and password
+    dbname: chirpas
+    host: chirpstack-postgres
+    port: 5432
+    sslmode: require
+  redis:
+    existingSecret: ""
+    servers:
+      - redis-chirpstack-redis
+  integration:
+    mqtt:
+      server: "tcp://mqtt-mosquitto:1883"
+      existingSecret: "" # secret and keys are optional
+  api:
+    external:
+      existingSecret: "chirpstack-jwt-secret" # secret is required key(signSecret)
+  istio:
+    enabled: true
+    gateway:
+      selector: "" # ingressgateway
+      host: ""
+      tls:
+        enabled: true
+        credentialName: ""
+
+
+networkserver:
+  enabled: true
+  replicaCount: 1
+  name: ns
+  image:
+    repository: chirpstack/chirpstack-network-server
+    tag: 3.9.0
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP
+  postgres:
+    existingSecret: "" # secret must set and contain keys username and password
+    dbname: chirpns
+    host: chirpstack-postgres
+    port: 5432
+    sslmode: require
+  redis:
+    existingSecret: ""
+    servers:
+      - redis-chirpstack-redis
+  gateway:
+    backend:
+      type: mqtt # only mqtt supported right now
+      mqtt:
+        server: "tcp://mqtt-mosquitto:1883"
+        existingSecret: "" # secret and keys are optional
+  join:
+    default:
+      server: "" # defaults to app-server(enabled) if empty    
+
+gatewaybridge:
+  enabled: false
+  name: gb
+  replicaCount: 1
+  image:
+    repository: chirpstack/chirpstack-gateway-bridge
+    tag: 3.8.0
+    pullPolicy: IfNotPresent
+  service:
+    type: ClusterIP

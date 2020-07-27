@@ -1,0 +1,17 @@
+{{- if .Values.gatewaybridge.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ template "chirpstack.gatewaybridge.fullname" . }}
+  labels:
+{{ include "chirpstack.gatewaybridge.labels" . | indent 4 }}
+spec:
+  type: {{ .Values.gatewaybridge.service.type | quote}}
+  ports:
+  - name: "1700"
+    port: 1700
+    protocol: UDP
+    targetPort: 1700
+  selector:
+{{ include "chirpstack.gatewaybridge.labels" . | indent 4 }}
+{{- end -}}
