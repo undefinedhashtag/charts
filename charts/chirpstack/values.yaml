@@ -4,7 +4,7 @@ appserver:
   replicaCount: 1
   image:
     repository: chirpstack/chirpstack-application-server
-    tag: 3.10.0
+    tag: 3.11.1
     pullPolicy: IfNotPresent
   service:
     type: ClusterIP
@@ -42,7 +42,7 @@ networkserver:
   name: ns
   image:
     repository: chirpstack/chirpstack-network-server
-    tag: 3.9.0
+    tag: 3.10.0
     pullPolicy: IfNotPresent
   service:
     type: ClusterIP
@@ -73,7 +73,7 @@ gatewaybridge:
   replicaCount: 1
   image:
     repository: chirpstack/chirpstack-gateway-bridge
-    tag: 3.8.0
+    tag: 3.9.2
     pullPolicy: IfNotPresent
   service:
     type: ClusterIP
