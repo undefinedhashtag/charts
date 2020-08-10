@@ -7,7 +7,6 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 helm.sh/chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
 {{- end -}}
 
-
 {{- define "chirpstack.appserver.fullname" -}}
 {{- $name := default .Chart.Name .Values.nameOverride -}}
 {{- if contains $name .Release.Name -}}
@@ -17,6 +16,11 @@ helm.sh/chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
 {{- end -}}
 {{- end -}}
 
+{{- define "chirpstack.appserver.selector" -}}
+app.kubernetes.io/name: {{ template "chirpstack.appserver.fullname" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end -}}
 
 {{- define "chirpstack.appserver.postgres.dsn" -}}
 {{- printf "user=$(POSTGRESQL__USER) password=$(POSTGRESQL__PASSWORD) host=%s dbname=%s sslmode=%s" .Values.appserver.postgres.host .Values.appserver.postgres.dbname .Values.appserver.postgres.sslmode -}}

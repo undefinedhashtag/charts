@@ -17,6 +17,12 @@ helm.sh/chart: {{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}
 {{- end -}}
 {{- end -}}
 
+{{- define "chirpstack.networkserver.selector" -}}
+app.kubernetes.io/name: {{ template "chirpstack.networkserver.fullname" . }}
+app.kubernetes.io/instance: {{ .Release.Name }}
+app.kubernetes.io/managed-by: {{ .Release.Service }}
+{{- end -}}
+
 {{- define "chirpstack.networkserver.postgres.dsn" -}}
 {{- printf "user=$(POSTGRESQL__USER) password=$(POSTGRESQL__PASSWORD) host=%s dbname=%s sslmode=%s" .Values.networkserver.postgres.host .Values.networkserver.postgres.dbname .Values.networkserver.postgres.sslmode -}}
 {{- end -}}

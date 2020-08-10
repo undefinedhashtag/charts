@@ -21,11 +21,11 @@ spec:
       maxUnavailable: 1
   selector:
     matchLabels:
-{{ include "chirpstack.appserver.labels" . | indent 6 }}
+{{ include "chirpstack.appserver.selector" . | indent 6 }}
   template:
     metadata:
       labels:
-{{ include "chirpstack.appserver.labels" . | indent 8 }}
+{{ include "chirpstack.appserver.selector" . | indent 8 }}
     spec:
       containers:
       - image: {{ printf "%s:%s" .Values.appserver.image.repository .Values.appserver.image.tag }}

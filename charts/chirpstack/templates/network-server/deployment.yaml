@@ -18,11 +18,11 @@ spec:
       maxUnavailable: 1
   selector:
     matchLabels:
-{{ include "chirpstack.networkserver.labels" . | indent 6 }}
+{{ include "chirpstack.networkserver.selector" . | indent 6 }}
   template:
     metadata:
       labels:
-{{ include "chirpstack.networkserver.labels" . | indent 8 }}
+{{ include "chirpstack.networkserver.selector" . | indent 8 }}
     spec:
       containers:
       - image: {{ printf "%s:%s" .Values.networkserver.image.repository .Values.networkserver.image.tag }}
