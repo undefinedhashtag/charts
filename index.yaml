@@ -66,6 +66,16 @@ entries:
   chirpstack:
   - apiVersion: v1
     appVersion: 3.x
+    created: "2020-08-10T15:44:05.484429259+02:00"
+    description: Community Helm Chart for chirpstack.io network stack.
+    digest: 2b64254fcd494bfb01e0046ddf144be41835182489443c7d661812a7e4fd156a
+    icon: https://www.chirpstack.io/img/logo.png
+    name: chirpstack
+    urls:
+    - chirpstack-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v1
+    appVersion: 3.x
     created: "2020-07-27T15:51:15.720163237+02:00"
     description: Community Helm Chart for chirpstack.io network stack.
     digest: 632d1aad12a526329400a3d54eb0c2de7031f08358154a1edb8bebd44a52f172
