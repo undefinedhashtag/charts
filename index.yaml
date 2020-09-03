@@ -3,7 +3,7 @@ entries:
   apim:
   - apiVersion: v1
     appVersion: 1.30.3
-    created: "2020-09-03T12:09:36.984905424+02:00"
+    created: "2020-09-03T13:10:54.554417113+02:00"
     dependencies:
     - condition: elasticsearch.enabled
       name: elasticsearch
@@ -26,7 +26,7 @@ entries:
   cert-manager:
   - apiVersion: v1
     appVersion: v0.14.2
-    created: "2020-09-03T12:09:36.993248971+02:00"
+    created: "2020-09-03T13:10:54.559685368+02:00"
     description: A Helm chart for cert-manager
     digest: 21f5a1ac5c6db54c638465ceaba961e0c9781d3a4ae41d6ac559d16b972bd624
     home: https://github.com/jetstack/cert-manager
@@ -47,7 +47,7 @@ entries:
     version: v0.14.2
   - apiVersion: v1
     appVersion: v0.6.2
-    created: "2020-09-03T12:09:36.994640303+02:00"
+    created: "2020-09-03T13:10:54.560560937+02:00"
     deprecated: true
     description: A Helm chart for cert-manager
     digest: 413f9a7077a951fde59ce20a0b633f1aa9e85e72198ee5f15cdf5f132ef6296f
@@ -66,7 +66,7 @@ entries:
   chirpstack:
   - apiVersion: v1
     appVersion: 3.x
-    created: "2020-09-03T12:09:37.00453536+02:00"
+    created: "2020-09-03T13:10:54.565553188+02:00"
     description: Community Helm Chart for chirpstack.io network stack.
     digest: f62d4e12be9ce4d718894dc1298a791ada3289d4446ca3a0970e0b69ec6382a3
     icon: https://www.chirpstack.io/img/logo.png
@@ -76,7 +76,7 @@ entries:
     version: 0.3.0
   - apiVersion: v1
     appVersion: 3.x
-    created: "2020-09-03T12:09:37.003045313+02:00"
+    created: "2020-09-03T13:10:54.564722637+02:00"
     description: Community Helm Chart for chirpstack.io network stack.
     digest: 2b64254fcd494bfb01e0046ddf144be41835182489443c7d661812a7e4fd156a
     icon: https://www.chirpstack.io/img/logo.png
@@ -86,7 +86,7 @@ entries:
     version: 0.2.0
   - apiVersion: v1
     appVersion: 3.x
-    created: "2020-09-03T12:09:37.001333638+02:00"
+    created: "2020-09-03T13:10:54.563890354+02:00"
     description: Community Helm Chart for chirpstack.io network stack.
     digest: 632d1aad12a526329400a3d54eb0c2de7031f08358154a1edb8bebd44a52f172
     icon: https://www.chirpstack.io/img/logo.png
@@ -96,7 +96,7 @@ entries:
     version: 0.1.3
   - apiVersion: v1
     appVersion: 3.x
-    created: "2020-09-03T12:09:36.99998632+02:00"
+    created: "2020-09-03T13:10:54.563023172+02:00"
     description: Community Helm Chart for chirpstack.io network stack.
     digest: ed65365459b5f4bb3794bc39da6ef3d49f7c74e6e64b354aa3e1d8e3504891bb
     icon: https://www.chirpstack.io/img/logo.png
@@ -106,7 +106,7 @@ entries:
     version: 0.1.2
   - apiVersion: v1
     appVersion: 3.x
-    created: "2020-09-03T12:09:36.998300351+02:00"
+    created: "2020-09-03T13:10:54.562222788+02:00"
     description: Community Helm Chart for chirpstack.io network stack.
     digest: 252a5277e8ec04fa6aefba23c7cda93d6740581307611e46debe184341864f58
     icon: https://www.chirpstack.io/img/logo.png
@@ -116,7 +116,7 @@ entries:
     version: 0.1.1
   - apiVersion: v1
     appVersion: 3.x
-    created: "2020-09-03T12:09:36.996107218+02:00"
+    created: "2020-09-03T13:10:54.561421047+02:00"
     description: Community Helm Chart for chirpstack.io network stack.
     digest: 8c0bdf94ea5280cd901e3fbbe914a6cc6e15f19732875007c82a3f8245dbe070
     icon: https://www.chirpstack.io/img/logo.png
@@ -126,7 +126,7 @@ entries:
     version: 0.1.0
   crate:
   - apiVersion: v1
-    created: "2020-09-03T12:09:37.005789846+02:00"
+    created: "2020-09-03T13:10:54.566298502+02:00"
     description: CrateDB chart
     digest: f7aabf2acd8e503074464513f09cca291877e81c958f9ca68295472f12afa791
     icon: https://crate.io/wp-content/themes/webflow/images/logo-crate.png
@@ -142,7 +142,15 @@ entries:
     version: 0.1.8
   datacollector:
   - apiVersion: v1
-    created: "2020-09-03T12:09:37.009064072+02:00"
+    created: "2020-09-03T13:10:54.569363618+02:00"
+    description: A Helm chart to deploy streamsets data datacollector
+    digest: fc7f23ae1e1eab908ab3cef578b4cd2769cd7a5ab3e038715d58942f7b41498f
+    name: datacollector
+    urls:
+    - datacollector-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v1
+    created: "2020-09-03T13:10:54.568262541+02:00"
     description: A Helm chart to deploy streamsets data datacollector
     digest: bc2ef57e7f5f67a87a4b3d9d325e9720176aed0bdc72e2b6d9f8b1feb58d87f4
     name: datacollector
@@ -150,7 +158,7 @@ entries:
     - datacollector-0.1.8.tgz
     version: 0.1.8
   - apiVersion: v1
-    created: "2020-09-03T12:09:37.007517902+02:00"
+    created: "2020-09-03T13:10:54.567242428+02:00"
     description: A Helm chart to deploy streamsets data datacollector
     digest: b64106235ef8e94ef2d9517932d9c519ff429d7a663ba8ef3e1ce9b1a8cc55b5
     name: datacollector
@@ -160,7 +168,7 @@ entries:
   docker-registry:
   - apiVersion: v1
     appVersion: 2.7.1
-    created: "2020-09-03T12:09:37.010478619+02:00"
+    created: "2020-09-03T13:10:54.570671666+02:00"
     description: A Helm chart for Docker Registry
     digest: 80c7b20e02e82e5521a6268c4f930e58cf7f51963c6c6e801e755e85617c0eef
     home: https://hub.docker.com/_/registry/
@@ -179,7 +187,7 @@ entries:
   elasticsearch:
   - apiVersion: v1
     appVersion: 7.6.1
-    created: "2020-09-03T12:09:37.015995822+02:00"
+    created: "2020-09-03T13:10:54.573803589+02:00"
     description: Official Elastic helm chart for Elasticsearch
     digest: b39b33caa730a23b5bdbd6b5f97b613a9e98449f65728a2778aa0d81ccce6656
     home: https://github.com/undefinedhashtag/charts
@@ -196,7 +204,7 @@ entries:
   grafana:
   - apiVersion: v1
     appVersion: 6.6.2
-    created: "2020-09-03T12:09:37.019358935+02:00"
+    created: "2020-09-03T13:10:54.576065949+02:00"
     description: The leading tool for querying and visualizing time series and metrics.
     digest: 1a823604662c925684b43dc43c1be832679c2dbcf360203beb74afcc107cef97
     home: https://grafana.net
@@ -218,7 +226,7 @@ entries:
   gravitee:
   - apiVersion: v1
     appVersion: 2.10.9
-    created: "2020-09-03T12:09:37.02259308+02:00"
+    created: "2020-09-03T13:10:54.578161488+02:00"
     description: Official Gravitee.io Helm chart for Access Management
     digest: 48e9f5627f6586209e3109dcec65e92fc6bc6537c88a487991cb96aa54b8bcf8
     home: https://gravitee.io
@@ -231,7 +239,7 @@ entries:
     version: 1.0.1
   iot-agent:
   - apiVersion: v1
-    created: "2020-09-03T12:09:37.024226806+02:00"
+    created: "2020-09-03T13:10:54.579236959+02:00"
     description: A Helm chart for NodeJS based IoT Agents
     digest: 1e08b70043646db7f4236d40c6cea653c0857408e981725b01a7ea54ee8f26d0
     name: iot-agent
@@ -240,7 +248,7 @@ entries:
     version: 0.1.6
   iot-agent-manager:
   - apiVersion: v1
-    created: "2020-09-03T12:09:37.025217802+02:00"
+    created: "2020-09-03T13:10:54.579843509+02:00"
     description: A Helm chart for IoT Agent Manager
     digest: 6b666e655e3b83acdbcdd2f51592ea8cf71deff300cf6e4e0afa9eb5d169fcca
     name: iot-agent-manager
@@ -250,7 +258,7 @@ entries:
   keycloak:
   - apiVersion: v1
     appVersion: 9.0.2
-    created: "2020-09-03T12:09:37.032153481+02:00"
+    created: "2020-09-03T13:10:54.584819269+02:00"
     description: Open Source Identity and Access Management For Modern Applications
       and Services
     digest: 554872be0fbdd37b6d8020b8232d62096f8827960dcf08ea48b7d8cb314cc6d1
@@ -277,7 +285,7 @@ entries:
     version: 7.7.1
   - apiVersion: v1
     appVersion: 8.0.1
-    created: "2020-09-03T12:09:37.028008036+02:00"
+    created: "2020-09-03T13:10:54.582165113+02:00"
     description: Open Source Identity and Access Management For Modern Applications
       and Services
     digest: d470d9a1e8b2c0732617d011f84e6d8e42c121728e37a0e610845b669cb2672a
@@ -305,7 +313,7 @@ entries:
   kube-state-metrics:
   - apiVersion: v1
     appVersion: 1.9.5
-    created: "2020-09-03T12:09:37.034243263+02:00"
+    created: "2020-09-03T13:10:54.587041301+02:00"
     description: Install kube-state-metrics to generate and expose cluster-level metrics
     digest: e3273006a55e75a137a28590e48f0f65bd728ee9036dd2b52bb6085c660cf788
     home: https://github.com/kubernetes/kube-state-metrics/
@@ -330,7 +338,7 @@ entries:
   metrics-server:
   - apiVersion: v1
     appVersion: 0.3.6
-    created: "2020-09-03T12:09:37.038580563+02:00"
+    created: "2020-09-03T13:10:54.590012622+02:00"
     description: Metrics Server is a cluster-wide aggregator of resource usage data.
     digest: efb3f3e8d2a7690fa6ba039c55da18b75b96d039e7401a0660287f9e9c0c74be
     home: https://github.com/kubernetes-incubator/metrics-server
@@ -349,7 +357,7 @@ entries:
     version: 2.11.0
   - apiVersion: v1
     appVersion: 0.3.6
-    created: "2020-09-03T12:09:37.037268007+02:00"
+    created: "2020-09-03T13:10:54.588489492+02:00"
     description: Metrics Server is a cluster-wide aggregator of resource usage data.
     digest: 0203414c9bae7fdcf448c32ec36f52a402bc6f0840fce5501551d615bcd604aa
     home: https://github.com/kubernetes-incubator/metrics-server
@@ -369,7 +377,7 @@ entries:
   nfs-server-provisioner:
   - apiVersion: v1
     appVersion: 2.2.1-k8s1.12
-    created: "2020-09-03T12:09:37.04002068+02:00"
+    created: "2020-09-03T13:10:54.591032933+02:00"
     description: nfs-server-provisioner is an out-of-tree dynamic provisioner for
       Kubernetes. You can use it to quickly & easily deploy shared storage that works
       almost anywhere.
@@ -392,7 +400,7 @@ entries:
   nginx-ingress:
   - apiVersion: v1
     appVersion: 0.30.0
-    created: "2020-09-03T12:09:37.044820327+02:00"
+    created: "2020-09-03T13:10:54.59423573+02:00"
     description: An nginx Ingress controller that uses ConfigMap to store the nginx
       configuration.
     digest: 1c563aa59351b9c2a054aa3b02d00a38f074b3ceba58ae3223cad1e3a803b754
@@ -415,7 +423,7 @@ entries:
   nosqlclient:
   - apiVersion: v1
     appVersion: 2.2.0
-    created: "2020-09-03T12:09:37.045936539+02:00"
+    created: "2020-09-03T13:10:54.594776405+02:00"
     description: A Helm chart to deploy nosql client
     digest: 182262885560667a2a5c97a5e2fd9d49a5a7ad08a54c65f321eed49ced0f9c53
     name: nosqlclient
@@ -425,7 +433,7 @@ entries:
   oauth2-proxy:
   - apiVersion: v1
     appVersion: 4.0.0
-    created: "2020-09-03T12:09:37.048102138+02:00"
+    created: "2020-09-03T13:10:54.595686718+02:00"
     description: A reverse proxy that provides authentication with Google, Github
       or other providers
     digest: 82167693788a0fd758318c95d1accec20d6324ff71c3f6f21bc22baf40951656
@@ -451,7 +459,7 @@ entries:
     version: 2.2.2
   orion:
   - apiVersion: v1
-    created: "2020-09-03T12:09:37.04925482+02:00"
+    created: "2020-09-03T13:10:54.596288893+02:00"
     description: A Helm chart for Orion Context Broker
     digest: d357b163d9f131ef21177f3f68eb7b14d9451a2ee6d26f865ec4614688239ae8
     maintainers:
@@ -466,7 +474,7 @@ entries:
   pgadmin:
   - apiVersion: v1
     appVersion: 4.13.0
-    created: "2020-09-03T12:09:37.051071704+02:00"
+    created: "2020-09-03T13:10:54.597192355+02:00"
     description: pgAdmin is a web based administration tool for the PostgreSQL database.
     digest: ba01cd2f60d74d61f8437b7d723d62c440d3f8d6f6b49b6998be513206dd8580
     home: https://www.pgadmin.org/
@@ -485,7 +493,7 @@ entries:
   pgadmin4:
   - apiVersion: v1
     appVersion: 4.19.0
-    created: "2020-09-03T12:09:37.052676366+02:00"
+    created: "2020-09-03T13:10:54.598175364+02:00"
     description: pgAdmin4 is a web based administration tool for PostgreSQL database
     digest: a60061d4a947bbd409a62abcc9b7218ba33670f60b4768d802ca8b5840ba2c34
     home: https://www.pgadmin.org/
@@ -499,7 +507,7 @@ entries:
   postgres-operator:
   - apiVersion: v1
     appVersion: 1.5.0
-    created: "2020-09-03T12:09:37.05543014+02:00"
+    created: "2020-09-03T13:10:54.599918357+02:00"
     description: Postgres Operator creates and manages PostgreSQL clusters running
       in Kubernetes
     digest: 856d5c8e2a36fa52da2cf31c3717ea8381e226ba8b106ed9193acd0ee53f52ad
@@ -522,7 +530,7 @@ entries:
   postgres-operator-ui:
   - apiVersion: v1
     appVersion: 1.5.0
-    created: "2020-09-03T12:09:37.057635526+02:00"
+    created: "2020-09-03T13:10:54.60053085+02:00"
     description: Postgres Operator UI provides a graphical interface for a convenient
       database-as-a-service user experience
     digest: 33d08ec9c886473f67d654f2ba3b537c8f52306e08093d7a344a468178f4eb4a
@@ -546,7 +554,7 @@ entries:
   postgresql:
   - apiVersion: v1
     appVersion: 11.7.0
-    created: "2020-09-03T12:09:37.061190779+02:00"
+    created: "2020-09-03T13:10:54.604096375+02:00"
     description: Chart for PostgreSQL, an object-relational database management system
       (ORDBMS) with an emphasis on extensibility and on standards-compliance.
     digest: fef3c9e79da3ac716fd2807864935c9d28585c1cf90c55bfc301124c82f5d771
@@ -572,7 +580,7 @@ entries:
     version: 8.4.3
   quantumleap:
   - apiVersion: v1
-    created: "2020-09-03T12:09:37.062515859+02:00"
+    created: "2020-09-03T13:10:54.605292525+02:00"
     description: A Helm chart for QuantumLeap
     digest: 5d7a8aa193d26298a1cdf38c36aec99bba176d6f8d838e031020e0b6d17bfc9e
     maintainers:
@@ -586,11 +594,11 @@ entries:
     version: 0.1.10
   redisoperator:
   - apiVersion: v1
-    created: "2020-09-03T12:09:37.063433511+02:00"
+    created: "2020-09-03T13:10:54.605760152+02:00"
     description: A Helm chart for the Spotahome Redis Operator
     digest: 8fc6a3574408b16b2c435104165b52a217374db9d0d025c7caae1a30414c2286
     name: redisoperator
     urls:
     - redisoperator-3.1.0.tgz
     version: 3.1.0
-generated: "2020-09-03T12:09:36.969566875+02:00"
+generated: "2020-09-03T13:10:54.545525031+02:00"
