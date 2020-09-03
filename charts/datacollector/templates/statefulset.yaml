@@ -58,12 +58,12 @@ spec:
             httpGet:
               path: /public-rest/ping
               port: {{ .Values.service.internalPort }}
-              initialDelaySeconds: {{ .Values.service.initialDelayLiveness }}
+            initialDelaySeconds: {{ .Values.service.initialDelayLiveness }}
           readinessProbe:
             httpGet:
               path: /public-rest/ping
               port: {{ .Values.service.internalPort }}
-              initialDelaySeconds: {{ .Values.service.initialDelayReadiness }}
+            initialDelaySeconds: {{ .Values.service.initialDelayReadiness }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
           volumeMounts:
