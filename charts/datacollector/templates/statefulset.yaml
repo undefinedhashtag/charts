@@ -21,9 +21,9 @@ spec:
         app: {{ template "datacollector.name" . }}
         release: {{ .Release.Name }}
         {{- if .Values.podAnnotations }}
-        annotations:
+      annotations:
 {{ toYaml .Values.podAnnotations | indent 8 }}
-        {{- end }}
+      {{- end }}
     spec:
       terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds}}
       initContainers:
