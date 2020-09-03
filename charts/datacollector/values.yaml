@@ -39,6 +39,8 @@ service:
   dataInternalPort: 8000
   dataPath: /data
   annotations: {}
+  initialDelayLiveness: 30
+  initialDelayReadiness: 30
 persistence:
   enabled: true
   accessMode: ReadWriteOnce

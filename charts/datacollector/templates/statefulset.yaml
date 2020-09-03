@@ -21,9 +21,9 @@ spec:
         app: {{ template "datacollector.name" . }}
         release: {{ .Release.Name }}
         {{- if .Values.podAnnotations }}
-        annotations:
+      annotations:
 {{ toYaml .Values.podAnnotations | indent 8 }}
-        {{- end }}
+      {{- end }}
     spec:
       terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds}}
       initContainers:
@@ -58,10 +58,12 @@ spec:
             httpGet:
               path: /public-rest/ping
               port: {{ .Values.service.internalPort }}
+            initialDelaySeconds: {{ .Values.service.initialDelayLiveness }}
           readinessProbe:
             httpGet:
               path: /public-rest/ping
               port: {{ .Values.service.internalPort }}
+            initialDelaySeconds: {{ .Values.service.initialDelayReadiness }}
           resources:
 {{ toYaml .Values.resources | indent 12 }}
           volumeMounts:
