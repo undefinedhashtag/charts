@@ -1,4 +1,6 @@
-r# Chirpstack Helm Chart
+# **CHART MOVED TO: https://gitlab.com/wobcom/iot/chirpstack-helm**
+
+# Chirpstack Helm Chart
 
 This directory contains a Kubernetes chart to deploy a [Chirpstack](https://chirpstack.io) cluster using deployments, services and istio if enabled.
 
